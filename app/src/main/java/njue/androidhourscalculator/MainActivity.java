@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity
         {
             if (state == 4)
             {
-                equalSign();
+               // equalSign();
             }
         }
         if (view.getId() == R.id.buttonHours)
