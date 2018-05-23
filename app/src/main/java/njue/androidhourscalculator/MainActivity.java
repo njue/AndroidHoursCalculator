@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity
         {
             if (state == 4)
             {
-               // equalSign();
+               equalsSign();
             }
         }
         if (view.getId() == R.id.buttonHours)
@@ -179,7 +179,10 @@ public class MainActivity extends AppCompatActivity
         }
         if (view.getId() == R.id.buttonClear)
         {
-
+            current.setText("");
+            total.setText("");
+            currentSeconds = 0;
+            totalSeconds = 0;
         }
 
     }
@@ -241,9 +244,24 @@ public class MainActivity extends AppCompatActivity
 
     private void equalsSign()
     {
-        //calculateTime();
+        total.setText(calculateTime());
+        current.setText("");
+        state = 0;
     }
 
+    private String calculateTime()
+    {
+        int seconds = totalSeconds;
+
+        int minutes = seconds/60;
+        int secondsRemainder = seconds%60;
+
+        int hours = minutes/60;
+        int minutesRemainder = minutes%60;
+
+        String totalTime = hours + "H " + minutesRemainder + "M " + secondsRemainder + "S";
+        return totalTime;
+    }
 
 
 
